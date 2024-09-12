@@ -31,7 +31,8 @@ class linkedList {
         void deleteHeadNode();
         void deleteAllZeroNodes();
         void printLinkedList();
-        void printMatrix();    
+        void printMatrix();
+        void printLinkedListAsMatrix();    
 };
 
 

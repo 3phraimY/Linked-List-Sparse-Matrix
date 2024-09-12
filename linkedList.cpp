@@ -114,11 +114,11 @@ void linkedList::deleteAllZeroNodes() {
     {
         this->deleteHeadNode();
     }
-    
+    currNode = this->head;
     while (currNode != nullptr && currNode->nextNode != nullptr) {
         
         //check if next node can be deleted
-        if (currNode->nextNode->value == 0) 
+        if (currNode != nullptr && currNode->nextNode->value == 0) 
         {
             deleteNextNode(currNode);
         } 
@@ -162,3 +162,22 @@ void linkedList::printMatrix() {
     }
     return;
 };
+
+void linkedList::printLinkedListAsMatrix() 
+{
+    node* currNode = this->head;
+    int position = 0;
+        while(currNode != nullptr)
+        {            
+            if(position%this->columns == 0)
+            {
+                std::cout << std::endl;
+            }
+            position++;
+            std::cout << currNode->value << " ";
+            
+            currNode = currNode->nextNode;
+        }
+        std::cout << std::endl;
+    return;
+}
